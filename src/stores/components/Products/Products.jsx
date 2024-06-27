@@ -11,7 +11,6 @@ import Kitchen from "./Kitchen/Kitchen";
 
 
 
-
 const Products = () => {
   return (
     <div>
