@@ -1,11 +1,15 @@
 import "react";
 import "./App.css";
 import "./index.css";
+import { Route, Routes } from "react-router-dom";
+import LandingPage from "./stores/pages/LandingPage";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold ">Ecommerce Website</h1>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
     </>
   );
 }
