@@ -1,0 +1,30 @@
+.proTitle h2 {
+  margin: 20px;
+}
+
+.proSection {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.proSection::-webkit-scrollbar {
+  display: none;
+}
+
+.proSection {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.imgBox {
+  flex: 0 0 auto;
+  width: 20%;
+  scroll-snap-align: start;
+  padding-left: 20px;
+}
+.proImage{
+    border-radius: 10px;
+}
