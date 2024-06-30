@@ -11,7 +11,7 @@ const Watch = () => {
       <div className="proSection">
         {firstFiveImages.map((item) => {
           return (
-            <div className="imgBox">
+            <div className="imgBox" key={item.id} >
               <Link to="/watch">
                 <img className="proImage" src={item.image} alt="" />
               </Link>

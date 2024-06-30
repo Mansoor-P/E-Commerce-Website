@@ -14,7 +14,7 @@ const Computers = () => {
       <div className="proSection">
         {firstFiveImages.map((item) => {
           return (
-            <div className="imgBox">
+            <div className="imgBox" key={item.id} >
               <Link to="/computers">
                 <img className="proImage" src={item.image} alt="" />
               </Link>

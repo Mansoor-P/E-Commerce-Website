@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
+import { useCart } from "../../context/CartContext";
 
 const Navbar = () => {
+  const { cartItems } = useCart(); 
+
   return (
     <div className={styles.navbarSection}>
       <div className={styles.navSection}>
@@ -19,7 +22,10 @@ const Navbar = () => {
           <div className={styles.userDetail}>SignIN/SignUp</div>
         </div>
         <Link to="/cart" className={styles.customLink}>
-          <div className={styles.cart}>Cart</div>
+          <div className={styles.cart}>
+            Cart 
+            <span>{cartItems.length}</span>
+          </div>
         </Link>
       </div>
     </div>
