@@ -2,59 +2,59 @@ import React, { useState } from "react";
 import { kitchenData } from "../data/kitchen";
 import Navbar from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import '../../App.css'; // Import the custom CSS
 
 const KitchenPage = () => {
   const [selectedProduct, setSelectedProduct] = useState([]);
 
-  const companyHandler = (mango) => {
-    if (selectedProduct.includes(mango)) {
-      setSelectedProduct(selectedProduct.filter((item) => item !== mango));
+  const companyHandler = (brand) => {
+    if (selectedProduct.includes(brand)) {
+      setSelectedProduct(selectedProduct.filter((item) => item !== brand));
     } else {
-      setSelectedProduct([...selectedProduct, mango]);
+      setSelectedProduct([...selectedProduct, brand]);
     }
   };
 
   const filteredProduct =
     selectedProduct.length === 0
       ? kitchenData
-      : kitchenData.filter((orange) => selectedProduct.includes(orange.brand));
+      : kitchenData.filter((product) => selectedProduct.includes(product.brand));
 
   return (
     <>
       <Navbar />
-      <div className="fullpage" key={item.id} >
-        <div className="pro-selected">
-          {kitchenData.map((phone) => {
-            return (
-              <div className="pro-input">
-                <label>
+      <div className="fullpage">
+        <div className="flex-container">
+          <div className="sidebar">
+            <h2 className="heading">Filter by Brand</h2>
+            {kitchenData.map((product) => (
+              <div key={product.brand} className="checkbox-container">
+                <label className="flex items-center">
                   <input
                     type="checkbox"
-                    checked={selectedProduct.includes(phone.brand)}
-                    onChange={() => companyHandler(phone.brand)}
+                    checked={selectedProduct.includes(product.brand)}
+                    onChange={() => companyHandler(product.brand)}
+                    className="checkbox-input"
                   />
-                  {phone.brand}
+                  {product.brand}
                 </label>
               </div>
-            );
-          })}
-        </div>
-
-        <div className="pageSection">
-          {filteredProduct.map((item) => {
-            return (
-              <div>
+            ))}
+          </div>
+          <div className="product-grid">
+            {filteredProduct.map((item) => (
+              <div key={item.id} className="product-card">
                 <Link to={`/kitchen/${item.id}`}>
-                  <div className="pageImg">
-                    <img src={item.image} alt="" />
+                  <div>
+                    <img className="product-image" src={item.image} alt="" />
                   </div>
                 </Link>
-                <div className="proModel">
+                <div className="product-model">
                   {item.brand}, {item.model}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </>

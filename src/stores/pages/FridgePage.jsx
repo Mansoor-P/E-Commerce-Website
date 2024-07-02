@@ -2,59 +2,59 @@ import React, { useState } from "react";
 import { fridgeData } from "../data/fridge";
 import Navbar from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import '../../App.css'; // Import the custom CSS
 
 const FridgePage = () => {
   const [selectedProduct, setSelectedProduct] = useState([]);
 
-  const companyHandler = (mango) => {
-    if (selectedProduct.includes(mango)) {
-      setSelectedProduct(selectedProduct.filter((item) => item !== mango));
+  const companyHandler = (company) => {
+    if (selectedProduct.includes(company)) {
+      setSelectedProduct(selectedProduct.filter((item) => item !== company));
     } else {
-      setSelectedProduct([...selectedProduct, mango]);
+      setSelectedProduct([...selectedProduct, company]);
     }
   };
 
   const filteredProduct =
     selectedProduct.length === 0
       ? fridgeData
-      : fridgeData.filter((orange) => selectedProduct.includes(orange.brand));
+      : fridgeData.filter((product) => selectedProduct.includes(product.brand));
 
   return (
     <>
       <Navbar />
       <div className="fullpage">
-        <div className="pro-selected">
-          {fridgeData.map((phone) => {
-            return (
-              <div className="pro-input">
+        <div className="flex-container">
+          <div className="sidebar">
+            <h2 className="heading">Filter by Brand</h2>
+            {fridgeData.map((product) => (
+              <div key={product.brand} className="checkbox-container">
                 <label>
                   <input
                     type="checkbox"
-                    checked={selectedProduct.includes(phone.brand)}
-                    onChange={() => companyHandler(phone.brand)}
+                    checked={selectedProduct.includes(product.brand)}
+                    onChange={() => companyHandler(product.brand)}
+                    className="checkbox-input"
                   />
-                  {phone.brand}
+                  {product.brand}
                 </label>
               </div>
-            );
-          })}
-        </div>
-
-        <div className="pageSection">
-          {filteredProduct.map((item) => {
-            return (
-              <div key={item.id} >
+            ))}
+          </div>
+          <div className="product-grid">
+            {filteredProduct.map((item) => (
+              <div key={item.id} className="product-card">
                 <Link to={`/fridge/${item.id}`}>
-                  <div className="pageImg">
-                    <img src={item.image} alt="" />
+                  <div>
+                    <img className="product-image" src={item.image} alt="" />
                   </div>
                 </Link>
-                <div className="proModel">
+                <div className="product-model">
                   {item.brand}, {item.model}
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </>
