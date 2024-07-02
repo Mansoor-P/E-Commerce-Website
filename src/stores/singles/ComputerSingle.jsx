@@ -7,8 +7,7 @@ import { useCart } from "../context/CartContext";
 
 const ComputerSingle = () => {
   const { id } = useParams();
-
-  const { addToCart, cartItems } = useCart();
+  const { addToCart } = useCart();
 
   const product = computerData.find((item) => item.id === id);
 
@@ -17,7 +16,7 @@ const ComputerSingle = () => {
       <Navbar />
       <div className="ind-section">
         <div className="ind-image">
-          <img src={product.image} alt="" />
+          <img className="w-full h-auto rounded-lg" src={product.image} alt="" />
         </div>
         <div className="ind-details space">
           <div className="ind-company">
@@ -32,7 +31,12 @@ const ComputerSingle = () => {
           <div className="ind-desc space">
             <p>{product.description}</p>
           </div>
-          <button onClick={() => addToCart(product)}>Add to Cart</button>
+          <button
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </>

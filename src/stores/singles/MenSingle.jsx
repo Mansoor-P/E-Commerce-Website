@@ -7,32 +7,36 @@ import { useCart } from "../context/CartContext";
 
 const MenSingle = () => {
   const { id } = useParams();
-
-  const {addToCart, cartItems} = useCart()
+  const { addToCart } = useCart();
 
   const product = menData.find((item) => item.id === id);
 
   return (
     <>
       <Navbar />
-      <div className="ind-section">
+      <div className="ind-section grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div className="ind-image">
-          <img src={product.image} alt="" />
+          <img className="w-full h-auto rounded-lg" src={product.image} alt="" />
         </div>
-        <div className="ind-details space">
+        <div className="ind-details">
           <div className="ind-company">
-            <h2>{product.company}</h2>
+            <h2>{product.brand}</h2>
           </div>
-          <div className="ind-model space">
+          <div className="ind-model">
             <h3>{product.model}</h3>
           </div>
-          <div className="ind-price space">
+          <div className="ind-price">
             <h2>{product.price}</h2>
           </div>
-          <div className="ind-desc space">
+          <div className="ind-desc">
             <p>{product.description}</p>
           </div>
-          <button onClick={()=>addToCart(product)}>Add to Cart</button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
       </div>
     </>
