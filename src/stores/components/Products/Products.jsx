@@ -18,14 +18,14 @@ const Products = () => {
       <ProductComponent categoryData={menData} categoryName="Mens Wear" routeTo="men" />
       <ProductComponent categoryData={womanData} categoryName="Women Fashion" routeTo="woman" />
       <ProductComponent categoryData={mobileData} categoryName="Mobiles" routeTo="mobiles"/>
-      <ProductComponent categoryData={acData} categoryName="AC" routeTo="ac"/>
+      {/* <ProductComponent categoryData={acData} categoryName="AC" routeTo="ac"/> */}
       <ProductComponent categoryData={computerData} categoryName="Computers" routeTo="computer" />
-      <ProductComponent categoryData={fridgeData} categoryName="Fridges" routeTo="fridge"/>
-      <ProductComponent categoryData={furnitureData} categoryName="Furniture" routeTo="furniture" />
-      <ProductComponent categoryData={speakerData} categoryName="Speakers" routeTo="speaker" />
-      <ProductComponent categoryData={booksData} categoryName="Books" routeTo="book" />
-      <ProductComponent categoryData={kitchenData} categoryName="Kitchen" routeTo="kitchen" />
-      <ProductComponent categoryData={tvData} categoryName="TV" routeTo="tv" />
+      {/* <ProductComponent categoryData={fridgeData} categoryName="Fridges" routeTo="fridge"/> */}
+      {/* <ProductComponent categoryData={furnitureData} categoryName="Furniture" routeTo="furniture" /> */}
+      {/* <ProductComponent categoryData={speakerData} categoryName="Speakers" routeTo="speaker" /> */}
+      {/* <ProductComponent categoryData={booksData} categoryName="Books" routeTo="book" /> */}
+      {/* <ProductComponent categoryData={kitchenData} categoryName="Kitchen" routeTo="kitchen" /> */}
+      {/* <ProductComponent categoryData={tvData} categoryName="TV" routeTo="tv" /> */}
       <ProductComponent categoryData={watchData} categoryName="Watches" routeTo="watch" />      
    
     </div>

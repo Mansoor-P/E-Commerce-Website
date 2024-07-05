@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { computerData } from "../data/computers";
 import Navbar from "../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
-import '../../App.css'; // Import the custom CSS
+import '../../App.css'; 
 
 const CompPage = () => {
   const [selectedProduct, setSelectedProduct] = useState([]);
