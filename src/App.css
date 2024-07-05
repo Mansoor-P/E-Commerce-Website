@@ -1,3 +1,4 @@
+/* Global styles */
 .fullpage {
   max-width: 100%;
   padding-left: 1rem;
@@ -19,6 +20,7 @@
   }
 }
 
+/* Sidebar styles */
 .sidebar {
   width: 100%;
   margin-bottom: 2rem;
@@ -50,6 +52,7 @@
   margin-right: 0.5rem;
 }
 
+/* Product grid styles */
 .product-grid {
   width: 100%;
   display: grid;
@@ -96,6 +99,7 @@
   font-weight: 600;
 }
 
+/* Individual section styles */
 .ind-section {
   max-width: 1200px;
   margin: 0 auto;
@@ -141,6 +145,7 @@
   font-size: 16px;
 }
 
+/* Button styles */
 button {
   background-color: #4caf50;
   color: white;
@@ -156,6 +161,19 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
   .ind-section {
     flex-direction: column;
     align-items: center;
