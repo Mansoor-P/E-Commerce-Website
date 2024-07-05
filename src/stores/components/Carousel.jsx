@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const images = [
-  "../../public/assets/1.jpg",
-  "../../public/assets/2.jpg",
-  "../../public/assets/g1.jpg",
-  "../../public/assets/g2.jpg",
-  "../../public/assets/b10.jpg",
-  "../../public/assets/b16.jpg",
+  "../public/assets/1.jpg",
+  "../public/assets/2.jpg",
+  "../public/assets/g1.jpg",
+  "../public/assets/g2.jpg",
+  "../public/assets/b10.jpg",
+  "../public/assets/b16.jpg",
 ];
 
 const Carousel = () => {
