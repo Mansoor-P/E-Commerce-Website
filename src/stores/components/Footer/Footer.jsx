@@ -9,7 +9,13 @@ const Footer = () => {
     },
     {
       name: "Important links",
-      links: [{ text: "About Us", path: "/about_us" }],
+      links: [
+        { text: "Men", path: "/men" },
+        { text: "Women", path: "/women" },
+        { text: "Mobiles", path: "/mobiles" },
+        { text: "Watches", path: "/watch" },
+        { text: "Computers", path: "/computers" },
+      ],
     },
     {
       name: "Connect Me Here",
@@ -43,7 +49,11 @@ const Footer = () => {
                       className="text-gray-400 hover:text-white"
                       to={link.path}
                       target={link.path.startsWith("http") ? "_blank" : "_self"}
-                      rel={link.path.startsWith("http") ? "noopener noreferrer" : ""}
+                      rel={
+                        link.path.startsWith("http")
+                          ? "noopener noreferrer"
+                          : ""
+                      }
                     >
                       {link.text}
                     </Link>
@@ -57,7 +67,8 @@ const Footer = () => {
       <div className="bg-gray-900 text-gray-500 py-4">
         <div className="container mx-auto text-center">
           <p>
-            Created by <strong className="text-white">Mansoor</strong> Copyright © 2024. All rights reserved.
+            Created by <strong className="text-white">Mansoor</strong> Copyright
+            © 2024. All rights reserved.
           </p>
         </div>
       </div>
