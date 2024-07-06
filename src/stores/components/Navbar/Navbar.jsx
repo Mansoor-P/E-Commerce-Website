@@ -13,17 +13,17 @@ const Navbar = () => {
 
   return (
     <div className="bg-white shadow-md p-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container mx-auto flex flex-wrap justify-between items-center">
         <Link to="/" className="text-2xl font-bold text-primary">
           <h2>E-Mart</h2>
         </Link>
 
-        <div className="flex items-center space-x-4">
-          <div className="relative flex items-center">
+        <div className="w-full sm:w-auto flex flex-wrap items-center justify-between sm:justify-end space-x-4 mt-2 sm:mt-0">
+          <div className="relative flex items-center w-full sm:w-auto mb-2 sm:mb-0">
             <input
               type="text"
               placeholder="Search..."
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full sm:w-64 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <FontAwesomeIcon
               icon={faSearch}
